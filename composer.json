@@ -1,22 +1,19 @@
 {
-<<<<<<< HEAD
-	"name": "CodeCoyotes/silverstripe-helpdesk",
-=======
-	"name": "codecoyotes/silverstripe-helpdesk",
->>>>>>> 86fd761f72ec2183c05eaa1c969db5c989d146c9
-	"description": "Helpdesk module for silverstripe",
-	"type": "silverstripe-module",
-	"keywords": ["silverstripe", "helpdesk", "faq", "tickets"],
-	"authors": [
-		{
-			"name": "CodeCoyotes"
-		}
-	],
-	"extra": {
-        "installer-name": "helpdesk"
-    }
-<<<<<<< HEAD
+  "name": "codecoyotes/silverstripe-helpdesk",
+  "description": "Helpdesk module for silverstripe",
+  "type": "silverstripe-module",
+  "keywords": [
+	"silverstripe",
+	"helpdesk",
+	"faq",
+	"tickets"
+  ],
+  "authors": [
+	{
+	  "name": "CodeCoyotes"
+	}
+  ],
+  "extra": {
+	"installer-name": "helpdesk"
+  }
 }
-=======
-}
->>>>>>> 86fd761f72ec2183c05eaa1c969db5c989d146c9
