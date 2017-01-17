@@ -1,5 +1,5 @@
 {
-	"name": "CodeCoyotes/silverstripe-helpdesk",
+	"name": "codecoyotes/silverstripe-helpdesk",
 	"description": "Helpdesk module for silverstripe",
 	"type": "silverstripe-module",
 	"keywords": ["silverstripe", "helpdesk", "faq", "tickets"],
