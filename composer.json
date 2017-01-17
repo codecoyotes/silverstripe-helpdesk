@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
 	"name": "CodeCoyotes/silverstripe-helpdesk",
+=======
+	"name": "codecoyotes/silverstripe-helpdesk",
+>>>>>>> 86fd761f72ec2183c05eaa1c969db5c989d146c9
 	"description": "Helpdesk module for silverstripe",
 	"type": "silverstripe-module",
 	"keywords": ["silverstripe", "helpdesk", "faq", "tickets"],
@@ -11,4 +15,8 @@
 	"extra": {
         "installer-name": "helpdesk"
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 86fd761f72ec2183c05eaa1c969db5c989d146c9
