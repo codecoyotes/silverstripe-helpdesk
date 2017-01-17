@@ -17,6 +17,9 @@ class HelpdeskCreateTicketForm extends Form {
 		));
 
 		parent::__construct($controller, 'HelpdeskCreateTicketForm', $fields, $actions, $validator);
+		if($this->hasExtension('FormSpamProtectionExtension')) {
+			$this->enableSpamProtection();
+		}
 	}
 
 	public function handle($data, Form $form){

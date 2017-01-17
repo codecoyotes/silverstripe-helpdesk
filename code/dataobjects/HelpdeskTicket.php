@@ -9,6 +9,10 @@ class HelpdeskTicket extends DataObject {
 
 	);
 
+	private static $belongs_many_many = array(
+		'Tags' => 'HelpdeskTag'
+	);
+
 	private static $summary_fields = array(
 		'ID',
 		'Created'

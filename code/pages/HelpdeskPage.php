@@ -10,4 +10,12 @@ class HelpdeskPage extends Page {
 
 class HelpdeskPage_Controller extends Page_Controller {
 
+	public function viewticket(){
+		//view form
+	}
+
+	public function createticket(){
+		//create form
+	}
+
 }

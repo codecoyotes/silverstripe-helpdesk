@@ -6,7 +6,8 @@ class FaqCategory extends DataObject {
 	private static $plural_name = 'FAQ categories';
 
 	private static $db = array(
-		'Title' => 'Varchar'
+		'Title' => 'Varchar',
+		'Sort' => 'Int'
 	);
 
 	private static $has_one = array(
@@ -22,5 +23,21 @@ class FaqCategory extends DataObject {
 		'Created',
 		'Title'
 	);
+
+	private static $default_sort = 'Sort';
+
+	public function getCMSFields()
+	{
+		$fields = parent::getCMSFields();
+		$fields->removeByName('Sort');
+
+		$itemsConfig = GridFieldConfig_RecordEditor::create();
+		if(class_exists('GridFieldOrderableRows')){
+			$itemsConfig->addComponent(new GridFieldOrderableRows());
+		}
+		$fields->addFieldToTab('Root.Main', new GridField('Items', _t('FaqItem.PLURAL_NAME', 'Faq items'), $this->Items(), $itemsConfig));
+
+		return $fields;
+	}
 
 }

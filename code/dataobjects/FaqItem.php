@@ -7,11 +7,16 @@ class FaqItem extends DataObject {
 
 	private static $db = array(
 		'Question' => 'Varchar(255)',
-		'Answer' => 'HTMLText'
+		'Answer' => 'HTMLText',
+		'Sort' => 'Int'
 	);
 
 	private static $has_one = array(
 		'Category' => 'FaqCategory'
+	);
+
+	private static $belongs_many_many = array(
+		'Tags' => 'HelpdeskTag'
 	);
 
 	private static $summary_fields = array(
@@ -19,5 +24,14 @@ class FaqItem extends DataObject {
 		'Created',
 		'Question'
 	);
+
+	private static $default_sort = 'Sort';
+
+	public function getCMSFields()
+	{
+		$fields = parent::getCMSFields();
+		$fields->removeByName('Sort');
+		return $fields;
+	}
 
 }

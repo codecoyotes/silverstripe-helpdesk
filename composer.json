@@ -15,5 +15,9 @@
   ],
   "extra": {
 	"installer-name": "helpdesk"
+  },
+  "require": {
+	"silverstripe/tagfield": "1.3.2",
+	"silverstripe-australia/gridfieldextensions": "1.4.2"
   }
 }
