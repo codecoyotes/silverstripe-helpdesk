@@ -1,6 +1,7 @@
 <?php
 
-class HelpdeskTicket extends DataObject {
+class HelpdeskTicket extends DataObject
+{
 
 	private static $singular_name = 'Helpdesk ticket';
 	private static $plural_name = 'Helpdesk tickets';
@@ -34,11 +35,35 @@ class HelpdeskTicket extends DataObject {
 
 	private static $default_sort = 'Status Created';
 
-	public function sendCreatedMail(){
-//		$this->Page()->AdminMember();
+	public function sendCreatedMail()
+	{
+		$email = new Email();
+		$email->setFrom($this->Page()->AdminMember->Email);
+		$email->setTo($this->Page()->AdminMember->Email);
+		$email->setSubject(_t('HelpdeskTicket.NEW_TICKET_EMAIL_SUBJECT', 'New ticket'));
+		$email->setTemplate('NewTicketEmail');
+		$email->populateTemplate(new ArrayData(array(
+			'Ticket' => $this
+		)));
+		$email->send();
 	}
 
-	public function sendNewCommentMail($comment){
-//		$comment->Member();
+	public function sendNewCommentMail($comment)
+	{
+		if($comment->MemberID == $this->Page()->AdminMemberID){
+			$toMail = $this->Member()->Email;
+		}else{
+			$toMail = $this->Page()->AdminMember()->Email;
+		}
+		$email = new Email();
+		$email->setFrom($this->Page()->AdminMember()->Email);
+		$email->setTo($toMail);
+		$email->setSubject(_t('HelpdeskTicket.NEW_COMMENT_EMAIL_SUBJECT', 'New ticket'));
+		$email->setTemplate('NewTicketCommentEmail');
+		$email->populateTemplate(new ArrayData(array(
+			'Ticket' => $this,
+			'Comment' => $comment
+		)));
+		$email->send();
 	}
 }
