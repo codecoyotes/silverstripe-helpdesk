@@ -41,5 +41,4 @@ class HelpdeskTicket extends DataObject {
 	public function sendNewCommentMail($comment){
 //		$comment->Member();
 	}
-
 }

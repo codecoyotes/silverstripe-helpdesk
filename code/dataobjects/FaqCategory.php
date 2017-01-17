@@ -42,6 +42,12 @@ class FaqCategory extends DataObject
 			$fields->addFieldToTab('Root.Main', new GridField('Items', _t('FaqItem.PLURAL_NAME', 'Faq items'), $this->Items(), $itemsConfig));
 		}
 
+		$itemsConfig = GridFieldConfig_RecordEditor::create();
+		if(class_exists('GridFieldOrderableRows')){
+			$itemsConfig->addComponent(new GridFieldOrderableRows());
+		}
+		$fields->addFieldToTab('Root.Main', new GridField('Items', _t('FaqItem.PLURAL_NAME', 'Faq items'), $this->Items(), $itemsConfig));
+
 		return $fields;
 	}
 

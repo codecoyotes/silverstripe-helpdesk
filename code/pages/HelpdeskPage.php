@@ -1,6 +1,7 @@
 <?php
 
-class HelpdeskPage extends Page {
+class HelpdeskPage extends Page
+{
 
 	private static $singular_name = 'Helpdesk page';
 	private static $plural_name = 'Helpdesk pages';
@@ -16,7 +17,8 @@ class HelpdeskPage extends Page {
 
 }
 
-class HelpdeskPage_Controller extends Page_Controller {
+class HelpdeskPage_Controller extends Page_Controller
+{
 
 	private static $allowed_actions = array(
 		'viewticket',
@@ -32,10 +34,11 @@ class HelpdeskPage_Controller extends Page_Controller {
 		'$TicketID!' => 'viewticket'
 	);
 
-	public function viewticket(){
+	public function viewticket()
+	{
 		$ticketID = $this->getRequest()->param('TicketID');
 		$ticket = HelpdeskTicket::get()->byID($ticketID);
-		if(!$ticket){
+		if (!$ticket) {
 			return $this->httpError(404);
 		}
 		return $this->customise(array(
@@ -43,15 +46,18 @@ class HelpdeskPage_Controller extends Page_Controller {
 		));
 	}
 
-	public function createticket(){
+	public function createticket()
+	{
 		return $this;
 	}
 
-	public function CreateTicketForm(){
+	public function CreateTicketForm()
+	{
 		return new HelpdeskCreateTicketForm($this, 'CreateTicketForm');
 	}
 
-	public function CommentTicketForm(){
+	public function CommentTicketForm()
+	{
 		return new HelpdeskCommentTicketForm($this, 'CommentTicketForm');
 	}
 
