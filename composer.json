@@ -1,0 +1,23 @@
+{
+  "name": "codecoyotes/silverstripe-helpdesk",
+  "description": "Helpdesk module for silverstripe",
+  "type": "silverstripe-module",
+  "keywords": [
+	"silverstripe",
+	"helpdesk",
+	"faq",
+	"tickets"
+  ],
+  "authors": [
+	{
+	  "name": "CodeCoyotes"
+	}
+  ],
+  "extra": {
+	"installer-name": "helpdesk"
+  },
+  "require": {
+	"silverstripe/tagfield": "1.3.2",
+	"silverstripe-australia/gridfieldextensions": "1.4.2"
+  }
+}
