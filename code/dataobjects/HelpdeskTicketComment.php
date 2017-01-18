@@ -10,7 +10,7 @@ class HelpdeskTicketComment extends DataObject {
 	);
 
 	private static $has_one = array(
-		'HelpdeskTicket' => 'HelpdeskTicket',
+		'Ticket' => 'HelpdeskTicket',
 		'Member' => 'Member'
 	);
 
@@ -19,5 +19,18 @@ class HelpdeskTicketComment extends DataObject {
 		'Created',
 		'Member.Name'
 	);
+
+	private static $default_sort = 'Created ASC';
+
+	public function getCMSFields()
+	{
+		$fields = parent::getCMSFields();
+		$fields->removeByName('TicketID');
+		return $fields;
+	}
+
+	public function IsAdminComment(){
+		return Permission::checkMember($this->Member(), 'Admin');
+	}
 
 }

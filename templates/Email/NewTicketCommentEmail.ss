@@ -1,1 +1,1 @@
-Update email
+Er is een nieuw comment op je ticket <a href="$Ticket.AbsoluteLink">Bekijk m hier</a>
