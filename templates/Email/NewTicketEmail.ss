@@ -1,1 +1,1 @@
-Er is een nieuw ticket <a href="$Ticket.AbsoluteLink">Bekijk m hier</a>
+There is a new ticket <a href="$Ticket.AbsoluteLink">click here to view it</a>
