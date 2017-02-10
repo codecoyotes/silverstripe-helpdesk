@@ -8,9 +8,13 @@
 				<% if $Items %>
 				<h2>$Title</h2>
 				<% loop $Items %>
-				<div>
-						<h3>$Question</h3>
-						$Answer
+				<div class="panel">
+						<div class="panel-header">
+								$Question
+						</div>
+						<div class="panel-body">
+								$Answer
+						</div>
 				</div>
 				<% end_loop %>
 				<% end_if %>
