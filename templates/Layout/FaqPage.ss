@@ -1,3 +1,4 @@
+<% cached 'faq', $LastEdited, $ID %>
 <div class="block">
 		<div class="container">
 				<h1>$Title</h1>
@@ -17,3 +18,4 @@
         <% end_if %>
 		</div>
 </div>
+<% end_cached %>
